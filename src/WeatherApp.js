@@ -8,14 +8,13 @@ import WeatherComponent from './Map';  // Импорт компонента ка
 import PressureScale from './components/PressureScale';
 import WindScale from './components/WindScale';
 import UvIndex from './components/UvIndex';
-import Visibility from './components/Visibility';
 
 
 
 const WeatherApp = () => {
     const api = {
         endpoint: 'https://api.openweathermap.org/data/2.5/',
-        key: process.env.REACT_APP_WEATHER_API_KEY
+        key: '6b9f15577ef5c811ae35044127a9dda3'
     };
 
     const [weatherData, setWeatherData] = useState(null);
