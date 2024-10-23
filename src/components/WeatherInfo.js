@@ -41,7 +41,7 @@ const WeatherInfo = ({ weatherData, data }) => {
                     <p className="weather-info-discr"><b>UV-Index:</b> {(data.current.uvi).toFixed()}</p>
                     <p className="weather-info-discr"><b>Feels like:</b> {Math.round(weatherData.main.feels_like)}°</p>
                     <p className="weather-info-discr"><b>Humidity:</b> {weatherData.main.humidity}%</p>
-                    <p className="weather-info-discr"><b>Wind:</b> {weatherData.wind.speed} m/s, {windDirection}</p>
+                    <p className="weather-info-discr"><b>Wind:</b> {weatherData.wind.speed.toFixed(1)} m/s, {windDirection}</p>
                     <p className="weather-info-discr"><b>Pressure:</b> {weatherData.main.pressure} hPa</p>
                 </div>
             

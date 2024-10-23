@@ -922,7 +922,7 @@ canvas {
 @media all and (max-width: 1150px) {
 
   .weather-app {
-    width: 99%;
+    width: 100%;
     max-width: 740px;
   }
 

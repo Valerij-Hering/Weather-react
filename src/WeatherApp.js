@@ -9,8 +9,6 @@ import PressureScale from './components/PressureScale';
 import WindScale from './components/WindScale';
 import UvIndex from './components/UvIndex';
 
-
-
 const WeatherApp = () => {
     const api = {
         endpoint: 'https://api.openweathermap.org/data/2.5/',
@@ -30,7 +28,7 @@ const WeatherApp = () => {
     const [wind, setWind] = useState({ speed: 0, gust: 0, deg: 0 });
     const [uvIndex, setUvIndex] = useState(0);
     const [theme, setTheme] = useState('light');
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
 
     // Сохраняем и загружаем тему
     useEffect(() => {
@@ -46,9 +44,7 @@ const WeatherApp = () => {
         document.body.className = newTheme === 'light' ? '' : 'dark-theme';
     };
 
-    
-
-
+    // Получаем погоду по геолокации
     const getWeatherByLocation = useCallback(async (position) => {
         setIsLoading(true);
         const { latitude, longitude } = position.coords;
@@ -73,8 +69,7 @@ const WeatherApp = () => {
         }
     }, [api.key, api.endpoint]);
 
-    console.log(data)
-    console.log(weatherData)
+    // Получаем погоду по названию города
     const getWeatherByCity = async () => {
         if (city) {
             setIsLoading(true);
@@ -101,10 +96,32 @@ const WeatherApp = () => {
         }
     };
 
-    // Получаем погоду по геолокации
+    // Получаем погоду по геолокации с обработкой отказа пользователя
     useEffect(() => {
         if (!isCitySearch && navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(getWeatherByLocation);
+            navigator.geolocation.getCurrentPosition(
+                getWeatherByLocation,
+                (error) => {
+                    console.log("Геолокация недоступна: ", error);
+                    // Устанавливаем нулевые значения погоды
+                    setWeatherData({
+                        name: 'Unknown',
+                        main: {
+                            temp: 0,
+                            feels_like: 0,
+                            humidity: 0,
+                            pressure: 0,
+                        },
+                        wind: {
+                            speed: 0,
+                            deg: 0,
+                        },
+                        weather: [{ description: 'No data', icon: '01d' }],
+                        sys: { country: '' },
+                    });
+                    setIsLoading(false);
+                }
+            );
         }
     }, [isCitySearch, getWeatherByLocation]);
 
@@ -186,12 +203,13 @@ const WeatherApp = () => {
                             />
                         )}
                     </div>
+
                     {weatherData && (
-                    <div className='section-wind_pressure'>
-                        <WindScale wind={wind} />
-                        <PressureScale pressure={pressure} />
-                        <UvIndex uvIndex={uvIndex} />
-                    </div>
+                        <div className='section-wind_pressure'>
+                            <WindScale wind={wind} />
+                            <PressureScale pressure={pressure} />
+                            <UvIndex uvIndex={uvIndex} />
+                        </div>
                     )}
                 </>
             )}
