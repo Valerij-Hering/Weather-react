@@ -121,6 +121,7 @@ body {
 
 .weather-info-discr {
   margin: 0;
+  margin-bottom: 3px;
   font-weight: 300;
   color: #1b2d4a;
   color: #52607e;
@@ -128,7 +129,7 @@ body {
 }
 
 .description {
-  margin-top:-7px;
+  margin-top:-10px;
   padding: 0;
 }
 
@@ -173,8 +174,9 @@ body {
 }
 
 .input::placeholder {
-  color: #737a85; 
+  color: #97a2b6; 
   font-weight: 100px;
+  font-size: 14px;
 }
 
 .input-microfon-btn {
@@ -334,7 +336,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #ffffff00;
-  color: var(--text-btn-color);
+  color: white;
   border-radius: 10px;
   border: 1px solid var(--background-btn-color);
   width: 40px;
@@ -769,7 +771,7 @@ canvas {
   margin-left: -8.8px;
   color: white;
   font-size: 20px;
-  transform: rotate(136deg);
+  transform: rotate(137deg);
 }
 
 .arow2 {
@@ -963,6 +965,17 @@ canvas {
 }
 
 @media all and (max-width: 640px) {
+  
+  .weather-info {
+    width: 90%;
+  }
+
+  .weather-icon-header {
+    position: absolute;
+    top: -20px;
+    width: 150px;
+    z-index: -1;
+  }
 
   .map-container {
     height: 200px;

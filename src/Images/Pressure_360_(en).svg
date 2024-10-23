@@ -5,8 +5,8 @@
 	.st1{fill:none;stroke:#ffffffb3;stroke-width:2.5;stroke-linecap:round;}
 	.st2{fill:none;stroke:#ffffffb3;stroke-width:0;stroke-linecap:round;}
 	.st3{font-family:Liberation Sans,Arial; stroke:#ffffffb3;}
-	.st4{font-size:40px; fill:#ffffff;}
-	.st5{font-size:12px; fille:#ffffff;}
+	.st4{font-size:40px; fill:#ffffff}
+	.st5{font-size:12px; fill:#ffffff;}
 </style>
 <g id="compass">
 	<g id="minutes">
