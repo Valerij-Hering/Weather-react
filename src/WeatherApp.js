@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import CityInput from './components/CityInput';
 import WeatherInfo from './components/WeatherInfo';
 import HourlyForecast from './components/HourlyForecast';
@@ -14,7 +14,7 @@ import UvIndex from './components/UvIndex';
 const WeatherApp = () => {
     const api = {
         endpoint: 'https://api.openweathermap.org/data/2.5/',
-        key: '6b9f15577ef5c811ae35044127a9dda3'
+        key: process.env.REACT_APP_WEATHER_API_KEY
     };
 
     const [weatherData, setWeatherData] = useState(null);
@@ -46,15 +46,10 @@ const WeatherApp = () => {
         document.body.className = newTheme === 'light' ? '' : 'dark-theme';
     };
 
-    // Получаем погоду по геолокации
-    useEffect(() => {
-        if (!isCitySearch && navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(getWeatherByLocation);
-        }
-    }, [isCitySearch]);
+    
 
 
-    const getWeatherByLocation = async (position) => {
+    const getWeatherByLocation = useCallback(async (position) => {
         setIsLoading(true);
         const { latitude, longitude } = position.coords;
         try {
@@ -71,12 +66,12 @@ const WeatherApp = () => {
             setTimezoneOffset(resultHourly.timezone_offset);
             setUvIndex(resultHourly.daily[0].uvi);
             setIsLoading(false);
-            setData(resultHourly)
+            setData(resultHourly);
         } catch (error) {
             console.error('Error fetching weather data by location:', error);
             setIsLoading(false);
         }
-    };
+    }, [api.key, api.endpoint]);
 
     console.log(data)
     console.log(weatherData)
@@ -105,6 +100,13 @@ const WeatherApp = () => {
             }
         }
     };
+
+    // Получаем погоду по геолокации
+    useEffect(() => {
+        if (!isCitySearch && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(getWeatherByLocation);
+        }
+    }, [isCitySearch, getWeatherByLocation]);
 
     const getWeatherByKeyPress = async (e) => {
         if (e.key === 'Enter') {
