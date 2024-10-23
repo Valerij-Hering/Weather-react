@@ -137,12 +137,12 @@ const WeatherApp = () => {
                         )}
                         <div className='box-input-btn'>
                             <div className='box_btn-change-map_chart'>
-                                <button className={menu === 'chart' ? 'btn-change-map_chart-active' : 'btn-change-map_chart'} onClick={() => setMenu('chart')}>
+                                <i className={menu === 'chart' ? 'btn-change-map_chart-active' : 'btn-change-map_chart'} onClick={() => setMenu('chart')}>
                                     <ion-icon name="bar-chart"></ion-icon>
-                                </button>
-                                <button className={menu === 'map' ? 'btn-change-map_chart-active' : 'btn-change-map_chart'} onClick={() => setMenu('map')}>
+                                </i>
+                                <i className={menu === 'map' ? 'btn-change-map_chart-active' : 'btn-change-map_chart'} onClick={() => setMenu('map')}>
                                     <ion-icon name="map"></ion-icon>
-                                </button>
+                                </i>
                                 <i className={theme === 'light' ? 'theme-toggle' : 'theme-toggle-dark'} onClick={toggleTheme}>
                                     <ion-icon name={theme === 'light' ? 'moon' : 'sunny'}></ion-icon>
                                 </i>
