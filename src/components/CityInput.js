@@ -7,23 +7,23 @@ const CityInput = ({ city, setCity, getWeatherByKeyPress, handleCitySearchClick 
     });
     const [isListening, setIsListening] = useState(false); // Состояние для отслеживания, слушает ли микрофон
 
-    // Обработчик успешного распознавания
-    const handleResult = (event) => {
-        const transcript = event.results[0][0].transcript; // Получаем распознанный текст
-        setCity(transcript); // Устанавливаем его в состояние city
-        handleCitySearchClick(); // Запускаем поиск
-    };
-
     // Устанавливаем обработчики после монтирования компонента
     useEffect(() => {
         if (recognition) {
+            // Внутри useEffect создаем функцию handleResult
+            const handleResult = (event) => {
+                const transcript = event.results[0][0].transcript; // Получаем распознанный текст
+                setCity(transcript); // Устанавливаем его в состояние city
+                handleCitySearchClick(); // Запускаем поиск
+            };
+
             recognition.onresult = handleResult;
             recognition.onend = () => setIsListening(false); // Обновляем состояние, когда распознавание останавливается
             recognition.onerror = (event) => {
                 console.error('Error occurred in recognition: ' + event.error); // Обработка ошибок
             };
         }
-    }, [recognition]);
+    }, [recognition, setCity, handleCitySearchClick]); // Зависимости useEffect
 
     const handleVoiceInput = () => {
         if (recognition) {
