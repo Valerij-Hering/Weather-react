@@ -14,7 +14,7 @@ import UvIndex from './components/UvIndex';
 const WeatherApp = () => {
     const api = {
         endpoint: 'https://api.openweathermap.org/data/2.5/',
-        key: process.env.REACT_APP_WEATHER_API_KEY
+        key: '6b9f15577ef5c811ae35044127a9dda3'
     };
 
     const [weatherData, setWeatherData] = useState(null);
