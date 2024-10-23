@@ -108,7 +108,6 @@ body {
   font-size: 105px;
   padding: 0;
   margin: 0px 10px;
-  font-weight: 100;
   color: #1b2d4a;
   padding-bottom: 0px;
   color: #007aff;
@@ -122,9 +121,8 @@ body {
 .weather-info-discr {
   margin: 0;
   margin-bottom: 3px;
-  font-weight: 300;
   color: #1b2d4a;
-  color: #52607e;
+  /* color: #52607e; */
   font-size: 14px;
 }
 
@@ -175,7 +173,6 @@ body {
 
 .input::placeholder {
   color: #97a2b6; 
-  font-weight: 100px;
   font-size: 14px;
 }
 
@@ -187,10 +184,7 @@ body {
   font-size: 25px;
   cursor: pointer;
   color: #1b2d4a8e;
-}
-
-.input-microfon-btn :hover {
-  color: rgb(255, 100, 100);
+  margin-left: auto;
 }
 
 .input-microfon-btn_active {
@@ -288,6 +282,7 @@ body {
   align-items: center;
   gap: 20px;
   height: 100%;
+  font-size: 25px;
 }
 
 .btn-change-map_chart-active {
@@ -450,7 +445,6 @@ body {
   height: 100px;
   flex: 0 0 auto;
   color: var(--text-color);
-  font-weight: 100;
   font-size: 14px;
 }
 
@@ -540,8 +534,6 @@ canvas {
   align-items: center;
   justify-content: baseline;
   width: 100%;
-
-  font-weight: 100;
   background: var(--background-color);
   color: var(--text-color);
   border-radius: 10px;
@@ -594,7 +586,6 @@ canvas {
   color: #50e9ff;
   margin-left: 2px;
   font-family: 'Ubuntu', sans-serif;
-  font-weight: 500;
 
 }
 
@@ -610,9 +601,7 @@ canvas {
   border-top: #ffffff74 0.1px solid;
   color: var(--text-color);
   font-size: 18px;
-  font-weight: bolder;
   width: 100%;
-  font-weight: 100;
   font-size: 14px;
   height: 65px;
 }
@@ -707,7 +696,6 @@ canvas {
 
 .windInfo-box {
   color: var(--text-color);
-  font-weight: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -717,7 +705,6 @@ canvas {
 
 .windInfo-box span {
   color: var(--text-color);
-  font-weight: 100;
 }
 
 .windInfo-box hr {
@@ -798,7 +785,6 @@ canvas {
 
 .info-header {
   color: var(--text-color);
-  font-weight: 100;
   font-size: 15px;
   padding: 10px 0;
   margin: 0;
@@ -936,7 +922,7 @@ canvas {
 @media all and (max-width: 1150px) {
 
   .weather-app {
-    width: 95%;
+    width: 98%;
     max-width: 740px;
   }
 
@@ -965,10 +951,6 @@ canvas {
 }
 
 @media all and (max-width: 640px) {
-  
-  .weather-info {
-    width: 90%;
-  }
 
   .weather-icon-header {
     position: absolute;
