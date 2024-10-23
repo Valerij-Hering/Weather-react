@@ -3,11 +3,17 @@
 :root {
   --background-color: rgb(26, 115, 232);
   --theme-icon-color: #ffffff;
+  --text-color: #ffffff;
+  --background-btn-color: #ffffff;
+  --text-btn-color: #46556e;
 }
 
 .dark-theme {
   --background-color: #1b2d4a;
   --theme-icon-color: #f3a201;
+  --text-color: #babec4;
+  --background-btn-color: #3e506e;
+  --text-btn-color: #ffffff;
 }
 
 
@@ -134,7 +140,6 @@ body {
   justify-content: flex-end;
   background-color: var(--background-color);
   width: 100%;
-
   height: 150px;
   padding: 10px;
   border-radius: 10px;
@@ -145,13 +150,11 @@ body {
 
 .container-input {
   width: 100%;
-
   max-height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 7px;
   padding: 3px;
 }
@@ -161,7 +164,7 @@ body {
   width: 100%;
   flex: 1;
   border-radius: 7px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   outline: none;
   color: #1b2d4a;
   font-size: 16px;
@@ -170,7 +173,7 @@ body {
 }
 
 .input::placeholder {
-  color: #1b2d4a65; 
+  color: #737a85; 
   font-weight: 100px;
 }
 
@@ -286,10 +289,13 @@ body {
 }
 
 .btn-change-map_chart-active {
-  background-color: white;
-  color: #46556e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-btn-color);
+  color: var(--text-btn-color);
   border-radius: 10px;
-  border: 1px solid white;
+  border: 1px solid var(--background-btn-color);
   width: 40px;
   height: 40px;
   font-size: 18px;
@@ -300,9 +306,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #ffffff00;
-  color: var(--theme-icon-color);
+  color: var(--text-color);
   border-radius: 10px;
-  border: 1px solid white;
+  border: 1px solid var(--background-btn-color);
   width: 40px;
   height: 40px;
   font-size: 18px;
@@ -313,10 +319,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  color: var(--theme-icon-color);
+  background-color: var(--background-btn-color);
+  color: var(--text-btn-color);
   border-radius: 10px;
-  border: 1px solid white;
+  border: 1px solid var(--background-btn-color);
   width: 40px;
   height: 40px;
   font-size: 18px;
@@ -324,10 +330,13 @@ body {
 }
 
 .btn-change-map_chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #ffffff00;
-  color: white;
+  color: var(--text-btn-color);
   border-radius: 10px;
-  border: 1px solid white;
+  border: 1px solid var(--background-btn-color);
   width: 40px;
   height: 40px;
   font-size: 18px;
@@ -387,7 +396,7 @@ body {
 
 .container-hourly_header  {
   font-size: 16px;
-  color: white;
+  color: var(--text-color);
   margin: 0px;
   display: flex;
   justify-content: center;
@@ -438,7 +447,7 @@ body {
   border-right: #ffffff74 0.5px solid;
   height: 100px;
   flex: 0 0 auto;
-  color: white;
+  color: var(--text-color);
   font-weight: 100;
   font-size: 14px;
 }
@@ -498,7 +507,7 @@ body {
   background-color: var(--background-color);
   border-radius: 10px;
   padding: 10px;
-  color:white;
+  color:var(--text-color);
   box-shadow: rgba(0, 0, 0, 0.1) 0rem 0.625rem 0.9375rem -0.1875rem, rgba(0, 0, 0, 0.05) 0rem 0.25rem 0.375rem -0.125rem;
 }
 
@@ -532,14 +541,14 @@ canvas {
 
   font-weight: 100;
   background: var(--background-color);
-  color: white;
+  color: var(--text-color);
   border-radius: 10px;
 
 }
 
 .containerDaysWeather-header {
   font-size: 16px;
-  color: white;
+  color: var(--text-color);
   margin: 0px;
   display: flex;
   justify-content: center;
@@ -557,7 +566,7 @@ canvas {
   justify-content: space-evenly;
   position: relative;
   margin-top: 5px;
-  color: white;
+  color: var(--text-color);
   
   width: 85%;
   cursor: pointer;
@@ -597,7 +606,7 @@ canvas {
   position: relative;
   padding: 3px;
   border-top: #ffffff74 0.1px solid;
-  color: white;
+  color: var(--text-color);
   font-size: 18px;
   font-weight: bolder;
   width: 100%;
@@ -665,7 +674,7 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--text-color);
   text-transform: uppercase;
   position: absolute;
   width: 60px;
@@ -695,7 +704,7 @@ canvas {
 }
 
 .windInfo-box {
-  color: white;
+  color: var(--text-color);
   font-weight: 100;
   display: flex;
   flex-direction: column;
@@ -705,7 +714,7 @@ canvas {
 }
 
 .windInfo-box span {
-  color: white;
+  color: var(--text-color);
   font-weight: 100;
 }
 
@@ -786,7 +795,7 @@ canvas {
 }
 
 .info-header {
-  color: white;
+  color: var(--text-color);
   font-weight: 100;
   font-size: 15px;
   padding: 10px 0;
@@ -824,7 +833,7 @@ canvas {
   height: 2.5px;
   background-color: white;
   border-radius: 50px;
-  color: white;
+  color: var(--text-color);
   font-size: 20px;
 }
 
@@ -835,7 +844,7 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--text-color);
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0.144);
   border-radius: 50%;
@@ -889,7 +898,7 @@ canvas {
 }
 
 .container-uv_index_description {
-  color: white;
+  color: var(--text-color);
 }
 
 /**/
@@ -925,7 +934,7 @@ canvas {
 @media all and (max-width: 1150px) {
 
   .weather-app {
-    width: 90%;
+    width: 95%;
     max-width: 740px;
   }
 

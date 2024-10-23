@@ -4,7 +4,7 @@ import WeatherInfo from './components/WeatherInfo';
 import HourlyForecast from './components/HourlyForecast';
 import DailyForecast from './components/DailyForecast';
 import TemperatureChart from './components/TemperatureChart';
-import WeatherComponent from './Map';  // Импорт компонента карты
+import WeatherComponent from './components/Map';
 import PressureScale from './components/PressureScale';
 import WindScale from './components/WindScale';
 import UvIndex from './components/UvIndex';
