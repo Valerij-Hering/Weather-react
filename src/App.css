@@ -188,7 +188,7 @@ body {
 }
 
 .input-microfon-btn_active {
-  position: relative; /* Позиционируем относительно родителя */
+  position: relative;
   background: transparent;
   display: flex;
   justify-content: center;
@@ -922,7 +922,7 @@ canvas {
 @media all and (max-width: 1150px) {
 
   .weather-app {
-    width: 98%;
+    width: 99%;
     max-width: 740px;
   }
 
@@ -978,4 +978,11 @@ canvas {
     grid-row: 2/3;
   }
   
+  .btn-change-map_chart {
+    font-size: 18px;
+  }
+
+  .btn-change-map_chart-active {
+    font-size: 18px;
+  }
 }
