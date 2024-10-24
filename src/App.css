@@ -72,7 +72,7 @@ body {
   position: absolute;
   top: -30px;
   width: 170px;
-z-index: 1;
+  z-index: 1;
 }
 
 .icon_3d {
@@ -87,7 +87,7 @@ z-index: 1;
   align-items: center;
   border-right: 2px solid #52607eae;
   flex: 1;
-  
+  z-index: 0;
 }
 
 .weather-info-box2 {
@@ -115,7 +115,7 @@ z-index: 1;
   color: #1b2d4a;
   padding-bottom: 0px;
   color: #007aff;
-  z-index: 2;
+  z-index: 1;
 }
 
 .degree-symbol {
@@ -636,8 +636,8 @@ canvas {
   gap: 5px;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .subcontainer-wind_pressure {
@@ -957,6 +957,26 @@ canvas {
     flex-direction: column-reverse;
   }
 
+  .wind-container {
+    grid-column: 1/8;
+    grid-row: 1/2;
+  }
+
+  .section-pressure {
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+
+  .container-uv_index {
+    grid-column: 4/8;
+    grid-row: 2/3;
+  }
+
+  .container-visibility {
+    grid-column: 1/4;
+    grid-row: 3/4;
+  }
+
   
 }
 
@@ -974,18 +994,23 @@ canvas {
   }
 
   .wind-container {
-    grid-column: 1/5;
+    grid-column: 1/8;
     grid-row: 1/2;
   }
 
   .section-pressure {
-    grid-column: 1/3;
+    grid-column: 1/4;
     grid-row: 2/3;
   }
 
   .container-uv_index {
-    grid-column: 3/5;
+    grid-column: 4/8;
     grid-row: 2/3;
+  }
+
+  .container-visibility {
+    grid-column: 1/4;
+    grid-row: 3/4;
   }
   
   .btn-change-map_chart {
