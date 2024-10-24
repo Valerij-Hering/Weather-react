@@ -30,7 +30,7 @@ const WeatherInfo = ({ weatherData, data }) => {
         <div className="weather-info" >
             <div className='weather-info-box1'>
                 <img className='weather-icon-header' src={`weather-icons-header/${weatherData.weather[0].icon}.png`} alt='icon'/>
-                <p className="weather-info-temp">{Math.round(weatherData.main.temp)}<span className='degree-symbol'>°</span></p>
+                <p className="weather-info-temp">{Math.round(weatherData.main.temp)}°</p>
                 <p className="weather-info-discr description">{capitalizedDescription}</p>
                 <p className="weather-info-discr">min:{(weatherData.main.temp_min).toFixed()}° - max:{(weatherData.main.temp_max).toFixed()}°</p>
             </div>

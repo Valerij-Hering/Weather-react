@@ -8,6 +8,8 @@ import WeatherComponent from './components/Map';
 import PressureScale from './components/PressureScale';
 import WindScale from './components/WindScale';
 import UvIndex from './components/UvIndex';
+import Visibility from './components/Visibility';
+import DewPoint from './components/DewPoint';
 
 const WeatherApp = () => {
     const api = {
@@ -86,6 +88,7 @@ const WeatherApp = () => {
                 setHourlyWeather(resultHourly.hourly);
                 setDailyWeather(resultHourly.daily);
                 setUvIndex(resultHourly.daily[0].uvi);
+
     
                 setCity('');
                 setIsLoading(false);
@@ -206,9 +209,11 @@ const WeatherApp = () => {
 
                     {weatherData && (
                         <div className='section-wind_pressure'>
-                            <WindScale wind={wind} />
-                            <PressureScale pressure={pressure} />
-                            <UvIndex uvIndex={uvIndex} />
+                            <WindScale wind={wind}/>
+                            <PressureScale pressure={pressure}/>
+                            <UvIndex uvIndex={uvIndex}/>
+                            <Visibility data={data}/>
+                            <DewPoint/>
                         </div>
                     )}
                 </>

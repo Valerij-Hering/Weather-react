@@ -16,6 +16,9 @@
   --text-btn-color: #ffffff;
 }
 
+.App {
+  background-color: white;
+}
 
 body {
   background-color: white;
@@ -69,7 +72,7 @@ body {
   position: absolute;
   top: -30px;
   width: 170px;
-  z-index: -1;
+z-index: 1;
 }
 
 .icon_3d {
@@ -84,6 +87,7 @@ body {
   align-items: center;
   border-right: 2px solid #52607eae;
   flex: 1;
+  
 }
 
 .weather-info-box2 {
@@ -111,6 +115,7 @@ body {
   color: #1b2d4a;
   padding-bottom: 0px;
   color: #007aff;
+  z-index: 2;
 }
 
 .degree-symbol {
@@ -124,6 +129,7 @@ body {
   color: #1b2d4a;
   /* color: #52607e; */
   font-size: 14px;
+  z-index: 2;
 }
 
 .description {
@@ -445,7 +451,7 @@ body {
   height: 100px;
   flex: 0 0 auto;
   color: var(--text-color);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .scrollTime {
@@ -586,7 +592,6 @@ canvas {
   color: #50e9ff;
   margin-left: 2px;
   font-family: 'Ubuntu', sans-serif;
-
 }
 
 .DaysWeatheTemperatur {
@@ -602,7 +607,7 @@ canvas {
   color: var(--text-color);
   font-size: 18px;
   width: 100%;
-  font-size: 14px;
+  font-size: 15px;
   height: 65px;
 }
 
@@ -627,12 +632,11 @@ canvas {
 
 .section-wind_pressure {
   width: 100%;
-  max-width: 740px;
   display: flex;
   gap: 5px;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
@@ -758,7 +762,7 @@ canvas {
   margin-left: -8.8px;
   color: white;
   font-size: 20px;
-  transform: rotate(137deg);
+  transform: rotate(138deg);
 }
 
 .arow2 {
@@ -889,9 +893,15 @@ canvas {
   color: var(--text-color);
 }
 
-/**/
+/*--- Visibility -------------------------------*/
 .container-visibility {
   background-color: var(--background-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  padding: 10px;
+  box-sizing: border-box;
+  grid-column: 5/6;
+  grid-row: 1/2;
 }
 /*--- Spinner -----------------------------------------------------------------------------------------------------------------------------  */
 
